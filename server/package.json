@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "server": "nodemon index.js",
+    "client": "cd ../client && yarn start",
+    "postinstall": "cd ../client && yarn install"
   },
   "license": "MIT",
   "dependencies": {
@@ -12,6 +15,7 @@
     "express": "^4.17.3"
   },
   "devDependencies": {
+    "concurrently": "^7.1.0",
     "nodemon": "^2.0.15"
   }
 }
