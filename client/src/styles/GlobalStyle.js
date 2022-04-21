@@ -61,7 +61,7 @@ const GlobalStyle = createGlobalStyle`
     padding: var(--spacing-xs) var(--spacing-sm);
     &:hover,
     &:focus{
-      background-color: var(--dark-grey);
+      background-color: var(--dark-gray);
       outline: 0;
     }
   }

@@ -5,8 +5,8 @@ const variables = css`
     --black: #121212;
     --near-black: #181818;
     --dark-gray: #282828;
-    --grey: #535353;
-    --light-grey: #b3b3b3;
+    --gray: #535353;
+    --light-gray: #b3b3b3;
     --white: #ffffff;
     --green: #1db954;
 

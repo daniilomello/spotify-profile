@@ -61,7 +61,7 @@ function App() {
           <Login />
         ) : (
           <>
-            <StyledLogoutButton onClick={logout}>Log out</StyledLogoutButton>
+            <StyledLogoutButton onClick={logout}>Sair</StyledLogoutButton>
             <Router>
               <ScrollToTop />
               <Switch>

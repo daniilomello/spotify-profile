@@ -5,6 +5,7 @@ import {
   getCurrentUserPlaylists,
   getTopArtists,
 } from '../spotify';
+import { SectionWrapper, ArtistsGrid } from '../components';
 import { StyledHeader } from '../styles';
 
 const Profile = () => {
@@ -43,7 +44,7 @@ const Profile = () => {
             )}
 
             <div>
-              <div className='header__overline'>Profile</div>
+              <div className='header__overline'>Perfil</div>
               <h1 className='header__name'>{profile.display_name}</h1>
               <p className='header__meta'>
                 {playlists && (
@@ -60,6 +61,14 @@ const Profile = () => {
             </div>
           </div>
         </StyledHeader>
+      )}
+
+      {topArtists && (
+        <main>
+          <SectionWrapper title='Top artistas do mês' seeAllLink='/top-artists'>
+            <ArtistsGrid artists={topArtists.items.slice(0, 10)} />
+          </SectionWrapper>
+        </main>
       )}
     </>
   );

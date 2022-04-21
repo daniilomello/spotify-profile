@@ -31,7 +31,9 @@ const generateRandomString = (length) => {
 };
 
 const stateKey = 'spotify_auth_state';
-const scope = 'user-read-private user-read-email user-top-read';
+const scope = ['user-read-private', 'user-read-email', 'user-top-read'].join(
+  ' ',
+);
 
 app.get('/login', (req, res) => {
   const state = generateRandomString(16);
