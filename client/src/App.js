@@ -8,7 +8,25 @@ import {
 import { accessToken, logout, getCurrentUserProfile } from './spotify';
 import { catchErrors } from './utils';
 import { GlobalStyle } from './styles';
-import { Login } from './pages';
+import { Login, Profile } from './pages';
+import styled from 'styled-components/macro';
+
+const StyledLogoutButton = styled.button`
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-md);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--white);
+  font-size: var(--fz-sm);
+  font-weight: 700;
+  border-radius: var(--border-radius-pills);
+  z-index: 10;
+  @media (min-width: 768px) {
+    right: var(--spacing-lg);
+  }
+`;
+
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -42,37 +60,29 @@ function App() {
         {!token ? (
           <Login />
         ) : (
-          <Router>
-            <ScrollToTop />
-            <Switch>
-              <Route path='/top-artists'>
-                <h1>Top Artistas</h1>
-              </Route>
-              <Route path='/top-tracks'>
-                <h1>Top Tracks</h1>
-              </Route>
-              <Route path='/playlists/:id'>
-                <h1>Playlist</h1>
-              </Route>
-              <Route path='/playlists'>
-                <h1>Playlists</h1>
-              </Route>
-              <Route path='/'>
-                <h1>Entrou</h1>
-                <button onClick={logout}>Sair</button>
-
-                {profile && (
-                  <>
-                    <h1>{profile.display_name}</h1>
-                    {profile.images.length && profile.images[0].url && (
-                      <img src={profile.images[0].url} alt='avatar' />
-                    )}
-                    <p>{profile.followers.total} Seguidores</p>
-                  </>
-                )}
-              </Route>
-            </Switch>
-          </Router>
+          <>
+            <StyledLogoutButton onClick={logout}>Log out</StyledLogoutButton>
+            <Router>
+              <ScrollToTop />
+              <Switch>
+                <Route path='/top-artists'>
+                  <h1>Top Artistas</h1>
+                </Route>
+                <Route path='/top-tracks'>
+                  <h1>Top Tracks</h1>
+                </Route>
+                <Route path='/playlists/:id'>
+                  <h1>Playlist</h1>
+                </Route>
+                <Route path='/playlists'>
+                  <h1>Playlists</h1>
+                </Route>
+                <Route path='/'>
+                  <Profile />
+                </Route>
+              </Switch>
+            </Router>
+          </>
         )}
       </header>
     </div>

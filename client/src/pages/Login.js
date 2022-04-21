@@ -27,7 +27,9 @@ const StyledLoginButton = styled.a`
 const Login = () => {
   return (
     <StyledLoginContainer>
-      <StyledLoginButton>Entrar com Spotify</StyledLoginButton>
+      <StyledLoginButton href='http://localhost:8888/login'>
+        Entrar com Spotify
+      </StyledLoginButton>
     </StyledLoginContainer>
   );
 };
