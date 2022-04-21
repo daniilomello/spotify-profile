@@ -57,7 +57,7 @@ const StyledGrid = styled.ul`
   }
 
   .grid__item__name {
-    margin: 0 0 var(--spacing-xxs);
+    margin: var(--spacing-md) 0 var(--spacing-xxs);
     font-size: var(--fz-md);
     letter-spacing: normal;
   }
