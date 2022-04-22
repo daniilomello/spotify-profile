@@ -9,7 +9,7 @@ const PlaylistGrid = ({ playlists }) => (
           <li className='grid__item' key={i}>
             <Link
               className='grid__item__inner'
-              to={`/playlist/${playlist.name}`}
+              to={`/playlists/${playlist.name}`}
             >
               {playlist.images.length && playlist.images[0] && (
                 <div className='grid__item__img'>
