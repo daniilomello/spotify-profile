@@ -8,7 +8,7 @@ import {
 import { accessToken, logout, getCurrentUserProfile } from './spotify';
 import { catchErrors } from './utils';
 import { GlobalStyle } from './styles';
-import { Login, Profile } from './pages';
+import { Login, Profile, TopArtists } from './pages';
 import styled from 'styled-components/macro';
 
 const StyledLogoutButton = styled.button`
@@ -26,7 +26,6 @@ const StyledLogoutButton = styled.button`
     right: var(--spacing-lg);
   }
 `;
-
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -66,7 +65,7 @@ function App() {
               <ScrollToTop />
               <Switch>
                 <Route path='/top-artists'>
-                  <h1>Top Artistas</h1>
+                  <TopArtists />
                 </Route>
                 <Route path='/top-tracks'>
                   <h1>Top Tracks</h1>

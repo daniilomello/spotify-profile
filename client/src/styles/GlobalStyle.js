@@ -73,8 +73,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   main {
+    padding: var(--spacing-xxl) 0;
     position: relative;
-    padding: var(--space-xxl) 0;
   }
 
   .app {
