@@ -1,8 +1,8 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { catchErrors } from '../utils';
-import { getPlaylistById, getAudioFeaturesForTrack } from '../spotify';
+import { catchErrors } from '../services/utils';
+import { getPlaylistById, getAudioFeaturesForTrack } from '../services/spotify';
 import { SectionWrapper, TrackList, Loader } from '../components';
 import { StyledHeader, StyledDropdown } from '../styles';
 

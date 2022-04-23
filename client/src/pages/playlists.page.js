@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { catchErrors } from '../utils';
-import { getCurrentUserPlaylists } from '../spotify';
+import { catchErrors } from '../services/utils';
+import { getCurrentUserPlaylists } from '../services/spotify';
 import { SectionWrapper, PlaylistGrid, Loader } from '../components';
 
 const Playlists = () => {

@@ -1,4 +1,4 @@
-import { formatDuration } from '../utils';
+import { formatDuration } from '../services/utils';
 import { StyledTrackList } from '../styles';
 
 const TrackList = ({ tracks }) => (

@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { catchErrors } from '../utils';
+import { catchErrors } from '../services/utils';
 import {
   getCurrentUserProfile,
   getCurrentUserPlaylists,
   getTopArtists,
   getTopTracks,
-} from '../spotify';
+} from '../services/spotify';
 import {
   SectionWrapper,
   ArtistsGrid,

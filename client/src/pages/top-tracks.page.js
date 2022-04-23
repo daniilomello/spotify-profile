@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { catchErrors } from '../utils';
-import { getTopTracks } from '../spotify';
+import { catchErrors } from '../services/utils';
+import { getTopTracks } from '../services/spotify';
 import {
   SectionWrapper,
   TrackList,

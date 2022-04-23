@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { catchErrors } from '../utils';
-import { getTopArtists } from '../spotify';
+import { catchErrors } from '../services/utils';
+import { getTopArtists } from '../services/spotify';
 import {
   SectionWrapper,
   ArtistsGrid,
