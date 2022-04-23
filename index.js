@@ -3,11 +3,15 @@ const express = require('express');
 const querystring = require('querystring');
 const app = express();
 const axios = require('axios');
-const port = 8888;
+const path = require('path');
 
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const REDIRECT_URL = process.env.REDIRECT_URL;
+const FRONTEND_URI = process.env.FRONTEND_URI;
+const PORT = process.env.PORT || 8888;
+
+app.use(express.static(path.resolve(__dirname, './client/build')));
 
 app.get('/', (req, res) => {
   const data = {
@@ -78,8 +82,7 @@ app.get('/callback', (req, res) => {
           expires_in,
         });
 
-        res.redirect(`http://localhost:3000/?${queryParams}`);
-        
+        res.redirect(`${FRONTEND_URI}?${queryParams}`);
       } else {
         res.redirect(`/?${querystring.stringify({ error: 'invalid_token' })}`);
       }
@@ -114,7 +117,10 @@ app.get('/refresh_token', (req, res) => {
     });
 });
 
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
+});
 
-app.listen(port, () => {
-  console.log(`Express server listening at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Express server listening at http://localhost:${PORT}`);
 });

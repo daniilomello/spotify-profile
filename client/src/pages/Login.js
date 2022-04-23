@@ -24,12 +24,15 @@ const StyledLoginButton = styled.a`
   }
 `;
 
+const LOGIN_URI =
+  process.env.NODE_ENV !== 'production'
+    ? 'http://localhost:8888/login'
+    : 'https://danlittle-spotify.herokuapp.com/login';
+
 const Login = () => {
   return (
     <StyledLoginContainer>
-      <StyledLoginButton href='http://localhost:8888/login'>
-        Entrar com Spotify
-      </StyledLoginButton>
+      <StyledLoginButton href={LOGIN_URI}>Entrar com Spotify</StyledLoginButton>
     </StyledLoginContainer>
   );
 };
