@@ -6,6 +6,10 @@ const StyledLoginContainer = styled.main`
   justify-content: center;
   align-items: center;
   height: 100vh;
+  text-align: center;
+  p {
+    margin-bottom: var(--spacing-lg);
+  }
 `;
 
 const StyledLoginButton = styled.a`
@@ -32,6 +36,10 @@ const LOGIN_URI =
 const Login = () => {
   return (
     <StyledLoginContainer>
+      <p>
+        Entre contato com o desenvolvedor para testar.
+        <br /> App liberador para um numero limitado de pessoas.
+      </p>
       <StyledLoginButton href={LOGIN_URI}>Entrar com Spotify</StyledLoginButton>
     </StyledLoginContainer>
   );
