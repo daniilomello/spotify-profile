@@ -30,7 +30,8 @@ Para iniciá-lo, siga os passos abaixo:
 # Crie uma conta no site do Spotify, inicie um novo aplicativo no dashboard.
 https://developer.spotify.com/dashboard/applications
 
-# Crie um arquivo .env adicione o client ID e client secret, mostrado no dashboard, seguindo o exmplo do arquivo .env.example
+# Crie um arquivo .env adicione o client ID e client secret, 
+# mostrado no dashboard, seguindo o exmplo do arquivo .env.example
 CLIENT_ID=SEU-ID-AQUI
 CLIENT_SECRET=SUA-SECRET-AQUI
 REDIRECT_URL=http://localhost:8888
